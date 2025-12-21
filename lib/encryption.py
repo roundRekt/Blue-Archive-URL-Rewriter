@@ -179,7 +179,7 @@ def encrypt_string(value: str, key: bytes) -> str | bytes:
     if not value or len(value) < 8:
         return value.encode() if value else b""
 
-    raw = value.encode("utf16")
+    raw = value.encode("utf-16le")
     return b64encode(xor(raw, key)).decode()
 
 
